@@ -11,7 +11,7 @@ jobs:
     
     strategy:
           matrix:
-            node: [['internal.yml', 3.0.0], ['external.yml', 3.0.0], ['datascience.yml', 3.0.0]]
+            node: [['internal.yml', 4.0.0], ['external.yml', 4.0.0], ['datascience.yml', 4.0.0]]
 
     steps:
       - uses: actions/checkout@v2
