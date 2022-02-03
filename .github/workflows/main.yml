@@ -7,9 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     strategy:
           matrix:
-            node: [['internal.yml', 6.0.0], ['external.yml', 6.0.0], ['datascience.yml', 6.0.0]]
+            node: [['internal.yml', 2.0.0], ['external.yml', 2.0.0], ['datascience.yml', 2.0.0]]
 
     steps:
       - uses: actions/checkout@v2
@@ -26,6 +27,6 @@ jobs:
           masterBranchName: master
           createPR: false
           branch:  master
-          message: Bump version to  ${{ matrix.node[1] }} in ${{ matrix.node[0] }}
+          message: Bump version to ${{ matrix.node[1] }} in ${{ matrix.node[0] }}
 
 
