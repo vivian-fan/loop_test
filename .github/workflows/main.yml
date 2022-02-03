@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
           matrix:
-            node: [('internal.yml', 5.0.0), ('external.yml', 5.0.0), ('datascience.yml', 5.0.0)]
+            file: ['internal.yml', 'external.yml', 'datascience.yml']
+            value: [5.0.0, 5.0.0, 5.0.0]
 
     steps:
       - uses: actions/checkout@v2
@@ -17,15 +18,15 @@ jobs:
       - name: Update Version on Yaml File
         uses: fjogeleit/yaml-update-action@master
         with:
-          valueFile: ${{ matrix.node[0] }}
+          valueFile: ${{ matrix.file }}
           propertyPath: info.version
-          value: ${{ matrix.node[1] }}
+          value: ${{ matrix.value }}
           commitChange: true
           updateFile: true
           targetBranch: master
           masterBranchName: master
           createPR: false
           branch:  master
-          message: Bump version to  ${{ matrix.node[1] }} in ${{ matrix.node[0] }}
+          message: Bump version to  ${{ matrix.value }} in ${{ matrix.file }}
 
 
