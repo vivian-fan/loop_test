@@ -1,0 +1,1 @@
+clari-common/src/main/resources/api-versions.properties clari-common/src/main/resources/handlers.properties cards-common/src/main/java/com/clarius/user_v2/GetUserInfoV5.java 
